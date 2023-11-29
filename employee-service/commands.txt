@@ -1,0 +1,22 @@
+steps to dockerize springboot app with mongo manually
+ 
+ 1 create spring boot app and maven clean and install it
+ 2 create snapshot or jar of the app in target folder
+ 3 build image of app using command: docker build -t <imagename> .
+ 4 pull mongo:latest and run it using command : docker run -d -p 27017:27017 --name anyName mongo:latest
+ 5 now mongo container is running
+ 6 run your spring app and link with running mongo container using command :
+   docker run -p 8080:8080 --name <springboot_container_you_want> --link <running_mongo_container_name>:<its_image_name> -d <springboot_app_image_name>
+ 7 call api using postman, data will be added and deleted from mongo DB
+
+steps to dockerize springboot app with mongo using docker-compose
+
+ 1 create image of application and name it : springboot-mongodb:1.0
+ 2 run command: docker-compose up
+ 3 log in to mongo container : docker exec -it <container_id> //bin//sh
+ 4 mongosh --username --password
+ 5 api's
+     Get:http://localhost:8092/app/emp/get
+     Post:http://localhost:8092/app/emp/add
+     Post:http://localhost:8092/app/emp/update/{emailId}
+     Delete:http://localhost:8092/app/emp/remove/{emailId}

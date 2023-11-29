@@ -1,0 +1,6 @@
+com\docker\mongo\employeeservice\model\Employee.class
+com\docker\mongo\employeeservice\EmployeeServiceApplication.class
+com\docker\mongo\employeeservice\service\EmployeeServiceImpl.class
+com\docker\mongo\employeeservice\repository\EmployeeRepository.class
+com\docker\mongo\employeeservice\service\EmployeeService.class
+com\docker\mongo\employeeservice\controller\EmployeeController.class
